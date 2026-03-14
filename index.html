@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yatai Tian — Software Engineer & Data Analyst</title>
+  <meta name="description" content="Portfolio of Yatai Tian — Software Engineer & Data Analyst building software with AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">yattian</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1 class="hero-title reveal-up">Yatai Tian</h1>
+        <p class="hero-subtitle reveal-up delay-1">Software Engineer & Data Analyst</p>
+        <p class="hero-desc reveal-up delay-2">I'm all in on AI.</p>
+        <p class="about-text reveal-up delay-2">
+          I'm a software engineer and data analyst who builds practical tools with AI. Professionally, I write Python and SQL to create internal websites and check numbers are matching production. On nights and weekends I create personal projects around card games - scrapers, image processors, and a bilingual Android app. All built with an AI augmented workflow.
+        </p>
+        <div class="highlights reveal-up delay-3">
+          <div class="highlight-badge">
+            <span class="highlight-icon">&#129302;</span>
+            <span>AI focused Dev</span>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-icon">&#128013;</span>
+            <span>Python & SQL</span>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-icon">&#128202;</span>
+            <span>Data Analysis</span>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-icon">&#128375;</span>
+            <span>Web Scraping</span>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-icon">&#127918;</span>
+            <span>Game Development</span>
+          </div>
+          <div class="highlight-badge">
+            <span class="highlight-icon">&#127760;</span>
+            <span>Web Apps</span>
+          </div>
+        </div>
+        <a href="#projects" class="cta-button reveal-up delay-3">View My Work</a>
+      </div>
+      <div class="hero-card reveal-up delay-2">
+        <div class="card-tilt-container" id="cardTiltContainer">
+          <div class="card-inner" id="cardInner">
+            <img src="assets/images/ogn-001.png" alt="OGN-001 Blazing Scorcher — Riftbound TCG card" class="card-image">
+            <div class="card-glare" id="cardGlare"></div>
+          </div>
+        </div>
+        <p class="card-caption">My favourite card game that inspires most of these projects</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal-up">Projects</h2>
+      <!-- CardScraper -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Pixelborn Artwork Card Scraper</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Selenium</span>
+            <span class="tech-badge">Requests</span>
+          </div>
+          <a href="https://github.com/yattian/Card-scraper" target="_blank" rel="noopener" class="showcase-github" aria-label="View CardScraper on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <p class="showcase-story">Riftbound is a social TCG (trading card game). A digital version was created by one of the community members. The card art was copyrighted, so the designer had players download it themselves. When the person managing the main art link went on holiday, 1000+ players had no card images. I stepped in to scrape the art and icons from official sources and published them on archive.org. These also included extra icons for the card to function well inside the game.</p>
+        <a href="https://archive.org/details/images-final" target="_blank" rel="noopener" class="showcase-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          archive.org — 8000+ views
+        </a>
+        <div class="showcase-images">
+          <div>
+            <img src="assets/images/card-scraper-art.png" alt="All scraped card art and icon variants" class="showcase-img">
+            <p class="showcase-caption">All scraped card art + icon variants</p>
+          </div>
+          <div>
+            <img src="assets/images/card-scraper-app.png" alt="Cards rendered in the Pixelborn game" class="showcase-img">
+            <p class="showcase-caption">Cards rendered in Pixelborn</p>
+          </div>
+          <div>
+            <img src="assets/images/use-my-link.png" alt="Discord showing community using my archive.org link" class="showcase-img">
+            <p class="showcase-caption">Community using my archive.org link</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ImageEditor & Riftle -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Riftle</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Pillow</span>
+            <span class="tech-badge">CairoSVG</span>
+            <span class="tech-badge">Dash</span>
+            <span class="tech-badge">Flask</span>
+          </div>
+        </div>
+        <p class="showcase-story">Two projects that feed into each other. I designed an image editor which extracts card metadata (energy, cost, keywords) via OCR and generates a JSON dataset of 298+ cards. Of course, automatically extracting will not come with 100% accuracy, so a website was designed to easily edit the card metadata. Once we have this information, Riftle was created that uses the dataset to power a daily guessing game (like Wordle/LoLdle). You guess by card attributes, with color coded and directional hints.</p>
+        <div class="showcase-images single">
+          <div>
+            <img src="assets/images/riftle.png" alt="Riftle game UI showing guesses with color-coded feedback" class="showcase-img">
+            <p class="showcase-caption">Riftle - "Successful in 4 guesses!"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RiftboundTranslator -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Riftbound Translator</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Kotlin</span>
+            <span class="tech-badge">Android</span>
+            <span class="tech-badge">CameraX</span>
+            <span class="tech-badge">ML Kit</span>
+          </div>
+          <a href="https://github.com/yattian/riftbound-translator" target="_blank" rel="noopener" class="showcase-github" aria-label="View RiftboundTranslator on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <p class="showcase-story">Players in Riftbound are able to use mixed language decks, this means some cards that players play will be in Chinese. The app provides instant EN to CN translation and vice versa: type a card ID (bottom left of the card) and a translated version of the card will appear. There's also a camera tab for ease of use, take a photo of a card, ML Kit OCR reads the ID, and the translation pops up automatically. This is an offline-ready app with 500+ card images in each language.</p>
+        <div class="showcase-images two-col">
+          <div>
+            <img src="assets/images/translator-english.png" alt="English card — Relentless Storm" class="showcase-img">
+            <p class="showcase-caption">English Relentless Storm card</p>
+          </div>
+          <div>
+            <img src="assets/images/translator-chinese.png" alt="Chinese version of the same card" class="showcase-img">
+            <p class="showcase-caption">Chinese Relentless Storm card</p>
+          </div>
+        </div>
+      </div>
+      <!-- Platformer -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Platformer</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Unity</span>
+            <span class="tech-badge">C#</span>
+          </div>
+          <a href="https://github.com/yattian/Platformer" target="_blank" rel="noopener" class="showcase-github" aria-label="View Platformer on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <p class="showcase-story">A platformer game where you collect cherries and reach the flag at the end. Built following YouTube tutorials, then went further into the gamespace by adding traps, hidden pathways, and challenges that made it my own.</p>
+        <div class="showcase-images">
+          <div>
+            <img src="assets/images/platformer-1.png" alt="Platformer gameplay screenshot 1" class="showcase-img">
+          </div>
+          <div>
+            <img src="assets/images/platformer-2.png" alt="Platformer gameplay screenshot 2" class="showcase-img">
+          </div>
+          <div>
+            <img src="assets/images/platformer-3.png" alt="Platformer gameplay screenshot 3" class="showcase-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- ZeldenRing -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">ZeldenRing</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Unity</span>
+            <span class="tech-badge">C#</span>
+          </div>
+          <a href="https://github.com/yattian/ZeldenRing" target="_blank" rel="noopener" class="showcase-github" aria-label="View ZeldenRing on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <p class="showcase-story">Inspired by Elden Ring (game of the year 2022), I wanted to build a simpler version. Learned how characters get animated, class systems for player and AI, and state machines through YouTube tutorials. This is extremely fun to build and please enjoy the demo of the current progress.</p>
+        <div class="showcase-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/ixyjaWv8sSM" title="ZeldenRing gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Dissertation -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Dissertation: Weather-Informed Traffic Forecasting</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Graph Neural Networks</span>
+          </div>
+          <a href="https://github.com/yattian/Graph-Neural-Network-Dissertation" target="_blank" rel="noopener" class="showcase-github" aria-label="View dissertation on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <p class="showcase-story">My final year dissertation on integrating meteorological data into local spatiotemporal graph neural networks to improve traffic flow prediction. The research explored whether weather features like rainfall, temperature, and wind could enhance forecasting accuracy beyond what spatial and temporal patterns alone could achieve.</p>
+        <a href="https://github.com/yattian/Graph-Neural-Network-Dissertation/blob/main/Yatai_Tian_Dissertation_402799865.pdf" target="_blank" rel="noopener" class="showcase-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Read the full dissertation (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Modal -->
+  <div class="modal-overlay" id="imageModal">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <img class="modal-img" id="modalImg" alt="">
+  </div>
+
+  <!-- Contact / Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="contact-inline reveal-up">
+        <h2 class="section-title">Get in Touch</h2>
+        <a href="mailto:yataitian@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+          <span>Email</span>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 yattian. Built under two hours with vanilla HTML, CSS & JS - and some friendly help from Claude Code.</p>
+    </div>
+  </footer>
+
+  <script src="js/particles.js"></script>
+  <script src="js/card-tilt.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
