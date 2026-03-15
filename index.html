@@ -116,23 +116,30 @@
         </div>
       </div>
 
-      <!-- ImageEditor & Riftle -->
+      <!-- Riftdle -->
       <div class="project-showcase reveal-up">
         <div class="showcase-header">
-          <h3 class="showcase-title">Riftle</h3>
+          <h3 class="showcase-title">Riftdle</h3>
           <div class="tech-badges">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Vite</span>
+            <span class="tech-badge">Firebase</span>
             <span class="tech-badge">Python</span>
-            <span class="tech-badge">Pillow</span>
-            <span class="tech-badge">CairoSVG</span>
-            <span class="tech-badge">Dash</span>
-            <span class="tech-badge">Flask</span>
           </div>
         </div>
-        <p class="showcase-story">Two projects that feed into each other. I designed an image editor which extracts card metadata (energy, cost, keywords) via OCR and generates a JSON dataset of 298+ cards. Of course, automatically extracting will not come with 100% accuracy, so a website was designed to easily edit the card metadata. Once we have this information, Riftle was created that uses the dataset to power a daily guessing game (like Wordle/LoLdle). You guess by card attributes, with color coded and directional hints.</p>
-        <div class="showcase-images single">
+        <a href="https://riftdle.web.app/" target="_blank" rel="noopener" class="showcase-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Play Riftdle
+        </a>
+        <p class="showcase-story">A daily card guessing game for the Riftbound TCG, inspired by Wordle and LoLdle. Features two game modes: Classic (guess by comparing attributes like domain, cost, might, type, and set) and Art (identify the card from progressively revealed artwork). Built a Python scraper to auto extract card data from Riot's card gallery, supporting both Origins and Spiritforged sets (488+ cards). Uses Firebase for anonymous auth, global guess distributions, and hosting.</p>
+        <div class="showcase-images" style="grid-template-columns: 1fr 2fr; max-width: 100%;">
           <div>
-            <img src="assets/images/riftle.png" alt="Riftle game UI showing guesses with color-coded feedback" class="showcase-img">
-            <p class="showcase-caption">Riftle - "Successful in 4 guesses!"</p>
+            <img src="assets/images/riftle.png" alt="Riftdle result popup showing successful guess" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
+            <p class="showcase-caption">Successful guess result</p>
+          </div>
+          <div>
+            <img src="assets/images/riftle-2.png" alt="Riftdle Classic mode with color-coded attribute feedback" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
+            <p class="showcase-caption">Classic Mode - Guess by card attributes</p>
           </div>
         </div>
       </div>
