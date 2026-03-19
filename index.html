@@ -82,6 +82,49 @@
   <section class="section projects" id="projects">
     <div class="container">
       <h2 class="section-title reveal-up">Projects</h2>
+      <!-- Riftdle -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Riftdle</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">React 19</span>
+            <span class="tech-badge">Vite</span>
+            <span class="tech-badge">Firebase</span>
+            <span class="tech-badge">Cloudflare R2</span>
+            <span class="tech-badge">Python</span>
+          </div>
+          <a href="https://github.com/yattian/riftdle" target="_blank" rel="noopener" class="showcase-github" aria-label="View Riftdle on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <a href="https://riftdle.lol" target="_blank" rel="noopener" class="showcase-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Play Riftdle — riftdle.lol
+        </a>
+        <p class="showcase-story">A daily card guessing game for the Riftbound TCG with 900+ active players, inspired by Wordle and LoLdle. Three game modes: <strong>Classic</strong> (guess by comparing attributes like domain, cost, type, and set across 10 guesses with hints unlocking after 5), <strong>Art</strong> (identify the card from progressively revealed artwork in 6 guesses), and <strong>Ability</strong> (guess from blurred ability text in 5 guesses). Players share combined results across modes with a "Share All" button.</p>
+        <p class="showcase-story">Built a Python scraper to auto-extract card data and artwork from Riot's card gallery, supporting Origins, Spiritforged, and Proving Grounds sets (660+ cards). Uses Firebase for anonymous auth, global guess distributions, real-time database with strict validation rules, and a UAT preview channel workflow for safe deployments.</p>
+        <p class="showcase-story"><strong>Infrastructure challenge:</strong> With 900 players loading 660+ card images, Firebase Hosting hit 14.6 GB/day in bandwidth — well past the free tier. I migrated all card images to <strong>Cloudflare R2</strong> (S3-compatible object storage with zero egress fees), set up a custom CDN domain (cdn.riftdle.lol), and uploaded via boto3's S3 API. Bandwidth costs dropped to zero overnight.</p>
+        <p class="showcase-story"><strong>Admin dashboard:</strong> Built a separate React analytics dashboard to track player stats, guess distributions per day, device breakdowns, play times, retention rates, and player timezones on a world map. Includes date navigation to browse historical data and per-mode stats like win rates, hint/skip usage, and most common first guesses.</p>
+        <div class="showcase-images" style="grid-template-columns: 1fr 1fr; max-width: 100%;">
+          <div>
+            <img src="assets/images/riftdle-classic.png" alt="Riftdle Classic mode with color-coded attribute feedback" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
+            <p class="showcase-caption">Classic Mode — attribute comparison grid</p>
+          </div>
+          <div>
+            <img src="assets/images/riftdle-art.png" alt="Riftdle Art mode with progressive image reveal" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
+            <p class="showcase-caption">Art Mode — progressive image reveal</p>
+          </div>
+          <div>
+            <img src="assets/images/riftdle-share.png" alt="Combined share text showing results from all 3 modes" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
+            <p class="showcase-caption">Combined "Share All" results</p>
+          </div>
+          <div>
+            <img src="assets/images/riftdle-dashboard.png" alt="Analytics dashboard showing player stats and distributions" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
+            <p class="showcase-caption">Admin dashboard — stats & distributions</p>
+          </div>
+        </div>
+      </div>
+
       <!-- CardScraper -->
       <div class="project-showcase reveal-up">
         <div class="showcase-header">
@@ -112,34 +155,6 @@
           <div>
             <img src="assets/images/use-my-link.png" alt="Discord showing community using my archive.org link" class="showcase-img">
             <p class="showcase-caption">Community using my archive.org link</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Riftdle -->
-      <div class="project-showcase reveal-up">
-        <div class="showcase-header">
-          <h3 class="showcase-title">Riftdle</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">Vite</span>
-            <span class="tech-badge">Firebase</span>
-            <span class="tech-badge">Python</span>
-          </div>
-        </div>
-        <a href="https://riftdle.web.app/" target="_blank" rel="noopener" class="showcase-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Play Riftdle
-        </a>
-        <p class="showcase-story">A daily card guessing game for the Riftbound TCG, inspired by Wordle and LoLdle. Features two game modes: Classic (guess by comparing attributes like domain, cost, might, type, and set) and Art (identify the card from progressively revealed artwork). Built a Python scraper to auto extract card data from Riot's card gallery, supporting both Origins and Spiritforged sets (488+ cards). Uses Firebase for anonymous auth, global guess distributions, and hosting.</p>
-        <div class="showcase-images" style="grid-template-columns: 1fr 2fr; max-width: 100%;">
-          <div>
-            <img src="assets/images/riftle.png" alt="Riftdle result popup showing successful guess" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
-            <p class="showcase-caption">Successful guess result</p>
-          </div>
-          <div>
-            <img src="assets/images/riftle-2.png" alt="Riftdle Classic mode with color-coded attribute feedback" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">
-            <p class="showcase-caption">Classic Mode - Guess by card attributes</p>
           </div>
         </div>
       </div>
