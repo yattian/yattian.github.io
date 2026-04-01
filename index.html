@@ -101,10 +101,67 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Play Riftdle — riftdle.lol
         </a>
-        <p class="showcase-story">A daily card guessing game for the Riftbound TCG with 900+ active players, inspired by Wordle and LoLdle. Three game modes: <strong>Classic</strong> (guess by comparing attributes like domain, cost, type, and set across 10 guesses with hints unlocking after 5), <strong>Art</strong> (identify the card from progressively revealed artwork in 6 guesses), and <strong>Ability</strong> (guess from blurred ability text in 5 guesses). Players share combined results across modes with a "Share All" button.</p>
+        <p class="showcase-story">A daily card guessing game for the Riftbound TCG with 2,300+ players, inspired by Wordle and LoLdle. Three game modes: <strong>Classic</strong> (guess by comparing attributes like domain, cost, type, and set across 10 guesses with hints unlocking after 5), <strong>Art</strong> (identify the card from progressively revealed artwork in 6 guesses), and <strong>Ability</strong> (guess from blurred ability text in 5 guesses). Players share combined results across modes with a "Share All" button.</p>
         <p class="showcase-story">Built a Python scraper to auto-extract card data and artwork from Riot's card gallery, supporting Origins, Spiritforged, and Proving Grounds sets (660+ cards). Uses Firebase for anonymous auth, global guess distributions, real-time database with strict validation rules, and a UAT preview channel workflow for safe deployments.</p>
-        <p class="showcase-story"><strong>Infrastructure challenge:</strong> With 900 players loading 660+ card images, Firebase Hosting hit 14.6 GB/day in bandwidth — well past the free tier. I migrated all card images to <strong>Cloudflare R2</strong> (S3-compatible object storage with zero egress fees), set up a custom CDN domain (cdn.riftdle.lol), and uploaded via boto3's S3 API. Bandwidth costs dropped to zero overnight.</p>
+        <p class="showcase-story"><strong>Infrastructure challenge:</strong> With 2,300+ players loading 660+ card images, Firebase Hosting hit 14.6 GB/day in bandwidth — well past the free tier. I migrated all card images to <strong>Cloudflare R2</strong> (S3-compatible object storage with zero egress fees), set up a custom CDN domain (cdn.riftdle.lol), and uploaded via boto3's S3 API. Bandwidth costs dropped to zero overnight.</p>
         <p class="showcase-story"><strong>Admin dashboard:</strong> Built a separate React analytics dashboard to track player stats, guess distributions per day, device breakdowns, play times, retention rates, and player timezones on a world map. Includes date navigation to browse historical data and per-mode stats like win rates, hint/skip usage, and most common first guesses.</p>
+
+        <!-- Stats Snapshot -->
+        <div class="riftdle-stats">
+          <div class="riftdle-stat-card">
+            <span class="riftdle-stat-value">2,300+</span>
+            <span class="riftdle-stat-label">Unique Players</span>
+          </div>
+          <div class="riftdle-stat-card">
+            <span class="riftdle-stat-value">9,900+</span>
+            <span class="riftdle-stat-label">Games Played</span>
+          </div>
+          <div class="riftdle-stat-card">
+            <span class="riftdle-stat-value">835+</span>
+            <span class="riftdle-stat-label">Hours Played</span>
+          </div>
+          <div class="riftdle-stat-card">
+            <span class="riftdle-stat-value">28%</span>
+            <span class="riftdle-stat-label">Player Retention</span>
+          </div>
+        </div>
+        <p class="riftdle-stats-note">Launched mid-March 2025. Stats tracked via custom analytics dashboard.</p>
+
+        <!-- Players by Region -->
+        <div class="riftdle-regions">
+          <h4 class="riftdle-regions-title">Players by Region</h4>
+          <div class="region-row">
+            <span class="region-name">New York</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 100%"></div></div>
+            <span class="region-count">1,847</span>
+          </div>
+          <div class="region-row">
+            <span class="region-name">Denver</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 38%"></div></div>
+            <span class="region-count">703</span>
+          </div>
+          <div class="region-row">
+            <span class="region-name">Chicago</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 37%"></div></div>
+            <span class="region-count">689</span>
+          </div>
+          <div class="region-row">
+            <span class="region-name">Sydney</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 34%"></div></div>
+            <span class="region-count">626</span>
+          </div>
+          <div class="region-row">
+            <span class="region-name">Los Angeles</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 31%"></div></div>
+            <span class="region-count">577</span>
+          </div>
+          <div class="region-row">
+            <span class="region-name">Toronto</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 30%"></div></div>
+            <span class="region-count">561</span>
+          </div>
+        </div>
+
         <div class="showcase-images" style="grid-template-columns: 1fr 1fr; max-width: 100%;">
           <div>
             <img src="assets/images/riftdle-classic.png" alt="Riftdle Classic mode with color-coded attribute feedback" class="showcase-img" style="aspect-ratio: auto; object-fit: contain;">

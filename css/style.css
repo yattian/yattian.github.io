@@ -449,6 +449,117 @@ img {
   border: 1px solid rgba(108, 99, 255, 0.15);
 }
 
+/* ===== Riftdle Stats Snapshot ===== */
+.riftdle-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.riftdle-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.riftdle-stat-card:hover {
+  border-color: rgba(0, 212, 170, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 212, 170, 0.08);
+}
+
+.riftdle-stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.riftdle-stat-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.riftdle-stats-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+/* ===== Region Breakdown ===== */
+.riftdle-regions {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+.riftdle-regions-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.region-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.region-row:last-child {
+  margin-bottom: 0;
+}
+
+.region-name {
+  flex: 0 0 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.region-bar-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.region-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
+  border-radius: 4px;
+  transition: width 0.6s ease-out;
+}
+
+.region-count {
+  flex: 0 0 48px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 /* ===== Video Embed ===== */
 .showcase-video {
   position: relative;
@@ -617,6 +728,14 @@ img {
     width: 220px;
     height: 308px;
     margin: 0 auto;
+  }
+
+  .riftdle-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .region-name {
+    flex: 0 0 80px;
   }
 
   .showcase-images {
