@@ -103,64 +103,55 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           Play Riftdle — riftdle.lol
         </a>
-        <p class="showcase-story">A full-stack daily game for the Riftbound TCG that grew to <strong>2,300+ players</strong> organically. Five game modes (Classic, Art, Ability, Blitz, Endless), 26 unlockable achievements, a streak system with earnable streak freezes, and cross-device stat sync. Built the entire product solo: game engine, data pipeline, analytics platform, CDN infrastructure, and automated test suite.</p>
-        <p class="showcase-story"><strong>Architecture:</strong> Deterministic daily card selection with no server-side state. Built a Python scraper to auto-extract 660+ cards and artwork from Riot's gallery into JSON5. Firebase RTDB handles global guess distributions with server-side validation rules (increment-only writes, one-shot submissions, auth-gated aggregates). Anonymous-first auth with seamless upgrade to Google or email sign-in, preserving all player data across the migration.</p>
-        <p class="showcase-story"><strong>Infrastructure:</strong> With 2,300+ players loading 660+ card images, Firebase Hosting hit 14.6 GB/day in bandwidth. Migrated all assets to <strong>Cloudflare R2</strong> with a custom CDN domain (cdn.riftdle.lol), dropping bandwidth costs to zero overnight.</p>
+        <p class="showcase-story">A full-stack daily game for the Riftbound TCG that grew to <strong>10,700+ players</strong> organically. Six game modes (Classic, Art, Ability, Blitz, Endless, Connections), 26 unlockable achievements, a streak system with earnable streak freezes, and cross-device stat sync. Built the entire product solo: game engine, data pipeline, analytics platform, CDN infrastructure, and automated test suite.</p>
+        <p class="showcase-story"><strong>Architecture:</strong> Deterministic daily card selection with no server-side state. Built a Python scraper to auto-extract card data and artwork from Riot's official gallery into JSON5, now covering 1,100+ cards across four sets. Firebase RTDB handles global guess distributions with server-side validation rules (increment-only writes, one-shot submissions, auth-gated aggregates). Anonymous-first auth with seamless upgrade to Google or email sign-in, preserving all player data across the migration.</p>
+        <p class="showcase-story"><strong>Infrastructure:</strong> With thousands of players loading card images across a growing pool, Firebase Hosting hit 14.6 GB/day in bandwidth. Migrated all assets to <strong>Cloudflare R2</strong> with a custom CDN domain (cdn.riftdle.lol), dropping bandwidth costs to zero overnight.</p>
         <p class="showcase-story"><strong>Tooling:</strong> Built a 13-page React analytics dashboard (Recharts + react-simple-maps) tracking retention cohorts, guess distributions, device breakdowns, and player geography. Streak freeze system uses local/remote merge with conflict resolution for cross-device consistency. 31 Playwright e2e tests cover all game modes, streaks, and freeze logic to catch regressions before deploy.</p>
+        <p class="showcase-story"><strong>Since launch:</strong> Shipped Connections, a card-grouping puzzle mode with a growing archive of community-submitted puzzles, plus Endless mode with monthly and all-time leaderboards. Onboarded Vendetta, the game's fourth card set, and started publishing a monthly community recap ("State of the Rift") covering the toughest cards and biggest trends each month. A scheduled job now protects players' streaks while they're away, and when a growing player base pushed Firebase's free-tier download quota to its limit, I moved the dashboard onto an IndexedDB cache with delta fetches instead of pulling the whole database on every open.</p>
 
         <!-- Stats Snapshot -->
         <div class="riftdle-stats">
           <div class="riftdle-stat-card">
-            <span class="riftdle-stat-value">2,300+</span>
+            <span class="riftdle-stat-value">10,700+</span>
             <span class="riftdle-stat-label">Unique Players</span>
           </div>
           <div class="riftdle-stat-card">
-            <span class="riftdle-stat-value">9,900+</span>
+            <span class="riftdle-stat-value">90,600+</span>
             <span class="riftdle-stat-label">Games Played</span>
           </div>
           <div class="riftdle-stat-card">
-            <span class="riftdle-stat-value">835+</span>
+            <span class="riftdle-stat-value">5,900+</span>
             <span class="riftdle-stat-label">Hours Played</span>
           </div>
           <div class="riftdle-stat-card">
-            <span class="riftdle-stat-value">28%</span>
+            <span class="riftdle-stat-value">34%</span>
             <span class="riftdle-stat-label">Player Retention</span>
           </div>
         </div>
-        <p class="riftdle-stats-note">Launched mid-March 2025. Stats tracked via custom analytics dashboard.</p>
+        <p class="riftdle-stats-note">Launched March 2026. Stats tracked via custom analytics dashboard.</p>
 
-        <!-- Players by Region -->
+        <!-- Recent Momentum -->
         <div class="riftdle-regions">
-          <h4 class="riftdle-regions-title">Players by Region</h4>
+          <h4 class="riftdle-regions-title">Recent Momentum</h4>
           <div class="region-row">
-            <span class="region-name">New York</span>
-            <div class="region-bar-track"><div class="region-bar" style="width: 100%"></div></div>
-            <span class="region-count">1,847</span>
+            <span class="region-name">Triple Play (7d)</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 80%"></div></div>
+            <span class="region-count">80%</span>
           </div>
           <div class="region-row">
-            <span class="region-name">Denver</span>
-            <div class="region-bar-track"><div class="region-bar" style="width: 38%"></div></div>
-            <span class="region-count">703</span>
+            <span class="region-name">7-Day Retention</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 41%"></div></div>
+            <span class="region-count">41%</span>
           </div>
           <div class="region-row">
-            <span class="region-name">Chicago</span>
-            <div class="region-bar-track"><div class="region-bar" style="width: 37%"></div></div>
-            <span class="region-count">689</span>
+            <span class="region-name">Quad Play (7d)</span>
+            <div class="region-bar-track"><div class="region-bar" style="width: 49%"></div></div>
+            <span class="region-count">49%</span>
           </div>
           <div class="region-row">
-            <span class="region-name">Sydney</span>
+            <span class="region-name">All-Time Retention</span>
             <div class="region-bar-track"><div class="region-bar" style="width: 34%"></div></div>
-            <span class="region-count">626</span>
-          </div>
-          <div class="region-row">
-            <span class="region-name">Los Angeles</span>
-            <div class="region-bar-track"><div class="region-bar" style="width: 31%"></div></div>
-            <span class="region-count">577</span>
-          </div>
-          <div class="region-row">
-            <span class="region-name">Toronto</span>
-            <div class="region-bar-track"><div class="region-bar" style="width: 30%"></div></div>
-            <span class="region-count">561</span>
+            <span class="region-count">34%</span>
           </div>
         </div>
 
@@ -182,6 +173,47 @@
             <p class="showcase-caption">Admin dashboard — stats & distributions</p>
           </div>
         </div>
+      </div>
+
+      <!-- BotC Token Mapper -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">Blood on the Clocktower Token Mapper</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Cloudflare Pages</span>
+            <span class="tech-badge">Cloudflare D1</span>
+          </div>
+        </div>
+        <a href="https://botctokenmapper.com" target="_blank" rel="noopener" class="showcase-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Try it — botctokenmapper.com
+        </a>
+        <p class="showcase-story">Blood on the Clocktower is a social deduction game almost always played from a custom script pulled off the community site botcscripts.com, not the ~20 characters that ship in the base box. Most groups either buy extra token sets or scribble substitutes on blank tokens by hand before every session.</p>
+        <p class="showcase-story">Paste in a script and the mapper works out which spare token from your base 3 box can stand in for each character it doesn't physically have, then prints ready-to-cut player sheets and a storyteller night order sheet built around that substitution. Free, no sign-in required.</p>
+        <p class="showcase-story"><strong>Under the hood:</strong> One self-contained HTML file with no external dependencies, deployed on Cloudflare Pages behind a locked-down Content Security Policy that pins the exact hash of its single inline script, so nothing else can execute on the page. Print activity is logged anonymously to a Cloudflare D1 database — just counts and country, never anything identifying — to see which scripts people are actually printing.</p>
+      </div>
+
+      <!-- AI Music Videos -->
+      <div class="project-showcase reveal-up">
+        <div class="showcase-header">
+          <h3 class="showcase-title">AI Music Videos</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">ComfyUI</span>
+            <span class="tech-badge">Flux</span>
+            <span class="tech-badge">WAN</span>
+            <span class="tech-badge">DaVinci Resolve</span>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/@YuliaLabels" target="_blank" rel="noopener" class="showcase-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Yulia Labels on YouTube
+        </a>
+        <p class="showcase-story">A side project making full music videos with generative AI instead of a camera and a cast, published under Yulia Labels. Character stills come out of Flux, then get animated into motion with WAN image-to-video, chaining the last frame of one clip into the start of the next to keep the camera moving continuously across a shot instead of resetting every few seconds. Vocals are lip-synced to the actual track, then everything is upscaled and colour-matched before the final cut in DaVinci Resolve.</p>
+        <div class="showcase-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/XQ6oktT6-ew?start=25" title="YURULU — Golden, Golden (M/V)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="showcase-caption">YURULU — "Golden, Golden"</p>
       </div>
 
       <!-- CardScraper -->
