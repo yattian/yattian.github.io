@@ -4,4 +4,8 @@ PRODUCT.md
 
 # Tooling scratch
 .impeccable/
+.hallmark/
 .playwright-mcp/
+
+# Full-size video masters; the page serves the compressed -720 versions
+assets/videos/*-landscape.mp4

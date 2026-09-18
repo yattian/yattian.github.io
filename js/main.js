@@ -1,152 +1,148 @@
-/* The Record Board
-   - Odometer: figures roll up from zero like a board flipping, once, on entry.
-   - Nav rail reveals once the board has been passed.
-   - Screenshot lightbox.
-   Motion grammar: things move on the vertical axis in discrete steps.
-   Nothing fades, nothing floats. */
+/* Three behaviours: video previews, YouTube players that load on click, and a lightbox on the captures. */
 
 (function () {
-  'use strict';
+  "use strict";
 
-  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add("js");
 
-  // --- Odometer -------------------------------------------------------------
-  // Each digit becomes a strip of 0-9 plus the target digit, translated up so
-  // it rolls through every numeral before settling on the real one.
-  function buildOdometer(el) {
-    var value = el.getAttribute('data-value') || '';
-    var frag = document.createDocumentFragment();
-    var digitIndex = 0;
-    // The board score is part of the arrival sequence, so it waits its turn.
-    var base = el.closest('.board') ? 450 : 0;
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-    for (var i = 0; i < value.length; i++) {
-      var ch = value[i];
-
-      if (ch < '0' || ch > '9') {
-        var sep = document.createElement('span');
-        sep.className = ch === '+' ? 'sep plus' : 'sep';
-        sep.textContent = ch;
-        frag.appendChild(sep);
-        continue;
-      }
-
-      var cell = document.createElement('span');
-      cell.className = 'd';
-
-      var strip = document.createElement('span');
-      strip.className = 'strip';
-      // 0 through 9, then the real digit at index 10.
-      for (var n = 0; n <= 9; n++) {
-        var slot = document.createElement('i');
-        slot.textContent = String(n);
-        strip.appendChild(slot);
-      }
-      var last = document.createElement('i');
-      last.textContent = ch;
-      strip.appendChild(last);
-
-      // Later digits land after earlier ones, so the figure settles left to right.
-      strip.style.transitionDelay = (base + digitIndex * 90) + 'ms';
-      digitIndex++;
-
-      cell.appendChild(strip);
-      frag.appendChild(cell);
-    }
-
-    el.appendChild(frag);
+  function playQuietly(video) {
+    var attempt = video.play();
+    if (attempt && typeof attempt.catch === "function") { attempt.catch(function () {}); }
   }
 
-  var odos = Array.prototype.slice.call(document.querySelectorAll('.odo'));
-  odos.forEach(buildOdometer);
+  /* Count-up, once per visit. The HTML already holds the final numbers, so screen readers and
+     visitors without JavaScript get them straight away; this only animates what is drawn.
+     Starts 150ms after the name lands, runs 1200ms on an exponential ease-out. */
+  var counts = document.querySelectorAll(".count");
+  if (counts.length && !reduced.matches) {
+    var START_AT = 570;
+    var DURATION = 1200;
+    var fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    var tooLate = new Promise(function (resolve) { setTimeout(function () { resolve("late"); }, 1000); });
 
-  function roll(el) { el.classList.add('roll'); }
+    Promise.race([fontsReady, tooLate]).then(function (result) {
+      if (result === "late") { return; } /* slow fonts: leave the final numbers alone rather than flash them */
 
-  if (reduced || !('IntersectionObserver' in window)) {
-    odos.forEach(roll);
-  } else {
-    var odoObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        roll(entry.target);
-        odoObserver.unobserve(entry.target);
+      var items = Array.prototype.map.call(counts, function (el) {
+        el.style.minWidth = el.getBoundingClientRect().width + "px"; /* the "+" never shifts */
+        var item = { el: el, to: Number(el.dataset.to) };
+        el.textContent = "0";
+        return item;
       });
-    }, { threshold: 0.4 });
 
-    odos.forEach(function (el) { odoObserver.observe(el); });
+      setTimeout(function () {
+        var startedAt = performance.now();
+        requestAnimationFrame(function tick(now) {
+          var t = Math.min(1, (now - startedAt) / DURATION);
+          var eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+          items.forEach(function (item) {
+            item.el.textContent = Math.round(item.to * eased).toLocaleString("en-US");
+          });
+          if (t < 1) { requestAnimationFrame(tick); }
+        });
+      }, Math.max(0, START_AT - performance.now()));
+    });
   }
 
-  // --- Nav rail: only once the board is behind you --------------------------
-  var rail = document.getElementById('rail');
-  var board = document.querySelector('.board');
-
-  if (rail && board && 'IntersectionObserver' in window) {
+  /* Scroll cue: fades once the visitor has scrolled past 40px, comes back at the top. */
+  var home = document.querySelector(".home");
+  var sentinel = document.querySelector(".home__sentinel");
+  if (home && sentinel && "IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
-      rail.classList.toggle('on', !entries[0].isIntersecting);
-    }, { threshold: 0, rootMargin: '-70% 0px 0px 0px' }).observe(board);
-  } else if (rail) {
-    rail.classList.add('on');
+      home.classList.toggle("is-scrolled", !entries[0].isIntersecting);
+    }).observe(sentinel);
   }
 
-  // --- Scroll cue -----------------------------------------------------------
-  // The board gets three seconds alone before anything asks you to move on.
-  // If you already scrolled, the invitation is moot and never appears.
-  var cue = document.getElementById('cue');
+  /* Videos. Hovering plays a silent preview from the first frame, with no controls, so it cannot
+     be unmuted. Pressing Play hands it over: it restarts from the beginning with sound and full
+     controls, and hovering never touches it again. */
+  Array.prototype.forEach.call(document.querySelectorAll(".vidwrap"), function (wrap) {
+    var video = wrap.querySelector("video");
+    var button = wrap.querySelector(".vid__play");
+    var owned = false;
 
-  if (cue) {
-    var cueShown = false;
-    var cueTimer = setTimeout(function () {
-      if (window.scrollY > 40) return;
-      cue.classList.add('on');
-      cueShown = true;
-    }, 3000);
+    video.controls = false;
+    video.muted = true;
 
-    var retire = function () {
-      if (window.scrollY <= 40) return;
-      clearTimeout(cueTimer);
-      if (cueShown) cue.classList.remove('on');
-      window.removeEventListener('scroll', retire);
-    };
-    window.addEventListener('scroll', retire, { passive: true });
-  }
+    wrap.addEventListener("mouseenter", function () {
+      if (owned || reduced.matches || !finePointer.matches) { return; }
+      video.muted = true;
+      video.currentTime = 0;
+      wrap.classList.add("is-previewing");
+      playQuietly(video);
+    });
 
-  // --- Lightbox -------------------------------------------------------------
-  var modal = document.getElementById('modal');
+    wrap.addEventListener("mouseleave", function () {
+      if (owned) { return; }
+      wrap.classList.remove("is-previewing");
+      video.pause();
+      video.currentTime = 0;
+    });
 
-  if (modal) {
-    var closeBtn = modal.querySelector('.modal-x');
-    var img = document.createElement('img');
-    img.alt = '';
-    modal.appendChild(img);
+    button.addEventListener("click", function () {
+      owned = true;
+      wrap.classList.remove("is-previewing");
+      button.hidden = true;
+      video.controls = true;
+      video.muted = false;
+      video.currentTime = 0;
+      playQuietly(video);
+      video.focus();
+    });
+  });
 
-    var lastFocused = null;
+  /* YouTube. The page ships a local still and a link; the player only loads when asked for. */
+  Array.prototype.forEach.call(document.querySelectorAll(".yt"), function (box) {
+    var link = box.querySelector(".yt__play");
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube-nocookie.com/embed/" + box.dataset.yt +
+        "?autoplay=1&rel=0&start=" + (box.dataset.start || "0");
+      iframe.title = box.dataset.title || "YouTube video";
+      iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      iframe.allowFullscreen = true;
+      box.replaceChildren(iframe);
+      iframe.focus();
+    });
+  });
 
-    function open(source) {
-      lastFocused = document.activeElement;
-      img.src = source.src;
-      img.alt = source.alt;
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      if (closeBtn) closeBtn.focus();
+  /* Lightbox on the captures. */
+  var dialog = document.getElementById("lightbox");
+  if (!dialog || typeof dialog.showModal !== "function") { return; }
+
+  var target = dialog.querySelector("img");
+  var closeButton = dialog.querySelector(".lightbox__close");
+
+  Array.prototype.forEach.call(document.querySelectorAll(".capture img"), function (image) {
+    image.tabIndex = 0;
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-haspopup", "dialog");
+
+    function open() {
+      target.src = image.currentSrc || image.src;
+      target.alt = image.alt;
+      dialog.showModal();
     }
 
-    function close() {
-      modal.classList.remove('open');
-      img.removeAttribute('src');
-      document.body.style.overflow = '';
-      if (lastFocused) lastFocused.focus();
-    }
-
-    document.querySelectorAll('.plates img, .shots img, .wide-plate img').forEach(function (thumb) {
-      thumb.addEventListener('click', function () { open(thumb); });
+    image.addEventListener("click", open);
+    image.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open();
+      }
     });
+  });
 
-    modal.addEventListener('click', function (e) {
-      if (e.target === modal || e.target === closeBtn) close();
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal.classList.contains('open')) close();
-    });
-  }
+  closeButton.addEventListener("click", function () { dialog.close(); });
+  dialog.addEventListener("click", function (event) {
+    if (event.target === dialog) { dialog.close(); }
+  });
+  dialog.addEventListener("close", function () {
+    target.src = "";
+    target.alt = "";
+  });
 })();

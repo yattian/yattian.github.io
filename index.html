@@ -3,357 +3,369 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yatai Tian - Data Analyst &amp; Software Engineer</title>
-  <meta name="description" content="Yatai Tian, data analyst at Quantium. Riftdle, a daily card game with 11,000 players that I built and still run, plus scrapers, dashboards and Android apps.">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0f2050">
+  <title>Yatai Tian | Data analyst who ships and runs his own products</title>
+  <meta name="description" content="Yatai Tian, data analyst at Quantium. Riftdle, a daily card game with 11,000+ players. Rumpus, browser party games. Ten projects, each linked to the live thing or the source.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f7efdc">
+  <meta property="og:title" content="Yatai Tian">
+  <meta property="og:description" content="Data analyst at Quantium. I design, build and run my own products. Ten of them, each linked to the live thing or the source.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yattian.github.io/">
+  <meta property="og:image" content="https://yattian.github.io/assets/images/poster-riftdle.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css?v=carnival">
+  <link rel="stylesheet" href="css/style.css?v=carnival">
 </head>
 <body>
-  <a href="#record" class="skip-link">Skip to the work</a>
+  <a class="skip-link" href="#work">Skip to the work</a>
 
-  <!-- ===== THE BOARD ===== -->
-  <header class="board" id="top">
-    <div class="board-top">
-      <p class="board-name">Yatai Tian<span class="dot" aria-hidden="true"></span><span class="board-kind">Personal projects</span></p>
-      <p class="board-mark">Riftdle, live daily since March 2026</p>
-    </div>
-
-    <div class="board-main">
-      <div class="board-figure">
-        <span class="odo" data-value="11,000+" aria-hidden="true"></span>
-        <span class="sr-only">More than 11,000</span>
+  <header class="home" id="top">
+    <span class="home__sentinel" aria-hidden="true"></span>
+    <div class="shell">
+      <div class="mast">
+        <nav class="mast__nav" aria-label="Primary">
+          <a href="#work">Work</a>
+          <a href="#watch">Watch</a>
+          <a href="#index">Index</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      <p class="board-label">Players<span class="board-sub">on Riftdle, the daily card game I built and run alone. <span class="climb">Still climbing.</span></span></p>
     </div>
 
-    <div class="board-foot">
-      <p class="board-role">Data analyst at Quantium. Everything on this page I built and still run on my own time.</p>
-      <a href="#standings" class="cue" id="cue">
-        <span>The record book</span>
-        <span class="cue-arrow" aria-hidden="true">&#8595;</span>
-      </a>
+    <div class="shell hero">
+      <h1 class="display hero__name enter" style="--i: 0">Yatai Tian<span class="hero__stop" aria-hidden="true">.</span></h1>
+      <p class="hero__lede enter" style="--i: 1">Data analyst at Quantium. I design, build and run my own products.</p>
+
+      <div class="hero__counts enter" style="--i: 2">
+        <dl class="counts">
+          <div>
+            <dt>Players</dt>
+            <dd><span class="sr-only">11,000+</span><span class="count" data-to="11000" aria-hidden="true">11,000</span><span class="count__plus" aria-hidden="true">+</span></dd>
+          </div>
+          <div>
+            <dt>Games played</dt>
+            <dd><span class="sr-only">100,000+</span><span class="count" data-to="100000" aria-hidden="true">100,000</span><span class="count__plus" aria-hidden="true">+</span></dd>
+          </div>
+          <div>
+            <dt>Hours played</dt>
+            <dd><span class="sr-only">5,900+</span><span class="count" data-to="5900" aria-hidden="true">5,900</span><span class="count__plus" aria-hidden="true">+</span></dd>
+          </div>
+        </dl>
+        <p class="counts__caption">On <a href="#riftdle">Riftdle</a>, a daily card game I built and still run alone.</p>
+      </div>
+    </div>
+
+    <div class="shell home__foot enter" style="--i: 3">
+      <a class="scroll-cue" href="#work">Scroll<span class="scroll-cue__arrow" aria-hidden="true">&darr;</span></a>
     </div>
   </header>
 
-  <!-- ===== NAV (appears past the board) ===== -->
-  <nav class="rail" id="rail">
-    <div class="rail-in">
-      <a href="#top" class="rail-name">Yatai Tian</a>
-      <ul>
-        <li><a href="#record">Riftdle</a></li>
-        <li><a href="#entries">Projects</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <main>
-    <!-- ===== STANDINGS ===== -->
-    <section class="standings" id="standings" aria-label="Riftdle standing figures">
-      <header class="sect-head">
-        <h2>Riftdle</h2>
-        <p>A daily card game for a trading card game, built and run by me alone. Live since March 2026.</p>
-      </header>
-      <dl>
-        <div class="line">
-          <dd class="fig"><span class="odo" data-value="100,000+" aria-hidden="true"></span><span class="sr-only">More than 100,000</span></dd>
-          <div class="line-body"><dt>Games played</dt><p>Every completed round across six modes, counted server side.</p></div>
+    <section class="band" id="work" aria-labelledby="work-heading">
+      <div class="shell">
+        <div class="band__head">
+          <h2 class="display" id="work-heading"><span class="orn" aria-hidden="true">&#9670;</span> Current work</h2>
+          <p>The three I am still shipping to.</p>
         </div>
-        <div class="line">
-          <dd class="fig"><span class="odo" data-value="5,900+" aria-hidden="true"></span><span class="sr-only">More than 5,900</span></dd>
-          <div class="line-body"><dt>Hours played</dt><p>Time in game, not sessions opened.</p></div>
-        </div>
-        <div class="line">
-          <dd class="fig"><span class="odo" data-value="34" aria-hidden="true"></span><span class="pc">%</span><span class="sr-only">34 percent</span></dd>
-          <div class="line-body"><dt>All time retention</dt><p>Players who came back after the day they arrived.</p></div>
-        </div>
-        <div class="line">
-          <dd class="fig"><span class="odo" data-value="41" aria-hidden="true"></span><span class="pc">%</span><span class="sr-only">41 percent</span></dd>
-          <div class="line-body"><dt>Seven day retention</dt><p>Still playing a full week after they started.</p></div>
-        </div>
-        <div class="line record">
-          <dd class="fig"><span class="odo" data-value="80" aria-hidden="true"></span><span class="pc">%</span><span class="sr-only">80 percent</span></dd>
-          <div class="line-body"><dt>Play three or more days a week <span class="flag">Best figure</span></dt><p>Of everyone active in a given week. This is the number I am proudest of.</p></div>
-        </div>
-      </dl>
-    </section>
 
-    <!-- ===== 01 RIFTDLE ===== -->
-    <section class="record-entry" id="record">
-      <div class="entry-head">
-        <span class="rank">01</span>
-        <div>
-          <h2>Riftdle</h2>
-          <p class="entry-meta">Built and operated solo. Live at riftdle.lol since March 2026. Source is private.</p>
-          <ul class="tech"><li>React 19</li><li>Vite</li><li>Firebase</li><li>Cloudflare R2</li><li>Python</li><li>Playwright</li><li>Recharts</li></ul>
-        </div>
-      </div>
-
-      <p class="hook">A daily guessing game for a trading card game, grown organically to 11,000 players and still climbing. Six modes, 26 achievements, and streaks that survive across devices. I built the game engine, the data pipeline, the analytics platform, the CDN and the test suite.</p>
-
-      <h3 class="rule-head sub">How each figure was set</h3>
-      <div class="decisions">
-        <article class="line">
-          <p class="fig sm">14.6<span class="pc">GB/day</span></p>
-          <div class="line-body">
-            <h4>Cut hosting cost to zero</h4>
-            <p>Firebase Hosting was serving 14.6 GB of card art every day. I moved every asset to Cloudflare R2 behind a custom CDN domain and bandwidth spend went to nothing overnight.</p>
+        <article class="project" id="riftdle">
+          <div class="project__head">
+            <span class="project__no" aria-hidden="true">01</span>
+            <h3 class="project__name display">Riftdle</h3>
+            <span class="status status--live">Live since March 2026</span>
           </div>
-        </article>
-        <article class="line">
-          <p class="fig sm">1,100<span class="pc">cards</span></p>
-          <div class="line-body">
-            <h4>Automated the data pipeline</h4>
-            <p>A Python scraper pulls card data, artwork and keywords straight from Riot's official gallery into JSON5. Onboarding a new set is a script run, not a week of typing.</p>
-          </div>
-        </article>
-        <article class="line">
-          <p class="fig sm">13<span class="pc">pages</span></p>
-          <div class="line-body">
-            <h4>Built the analytics myself</h4>
-            <p>A React dashboard tracks retention cohorts, guess distributions, device mix and player geography. When traffic pushed Firebase past its free download quota I moved it onto an IndexedDB cache with delta fetches instead of pulling the whole database on every open.</p>
-          </div>
-        </article>
-        <article class="line">
-          <p class="fig sm">31<span class="pc">e2e tests</span></p>
-          <div class="line-body">
-            <h4>Kept it from breaking</h4>
-            <p>Playwright tests cover all six modes, streaks and cross device sync so regressions are caught before deploy. Server side Firebase rules validate every write: increment only, one submission per player per day.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="plates">
-
-        <figure class="plate full">
-          <figcaption><span class="plate-n">Plate 01</span>Classic mode. Guess the card, and the grid tells you which attributes you got right.</figcaption>
-          <img src="assets/images/riftdle-classic.png" width="797" height="474" alt="Riftdle Classic mode showing a colour coded attribute comparison grid" loading="lazy">
-        </figure>
-
-        <div class="band">
-          <figure class="bp lead">
-            <img src="assets/images/riftdle-dashboard.png" width="1242" height="1290" alt="Analytics dashboard showing player stats and guess distributions" loading="lazy">
-            <figcaption><span class="plate-n">Plate 02</span>The analytics dashboard. Every figure on this page is read off it.</figcaption>
-          </figure>
-          <figure class="bp drop">
-            <img src="assets/images/riftdle-share.png" width="1202" height="1046" alt="Combined share text showing results from three game modes" loading="lazy">
-            <figcaption><span class="plate-n">Plate 03</span>The share grid players paste into group chats. This is most of how it spread.</figcaption>
-          </figure>
-        </div>
-
-      </div>
-
-      <p class="since"><span>Since launch</span> Connections, a card grouping puzzle with a community submitted archive. Endless mode with monthly and all time leaderboards. A fourth card set onboarded, a scheduled job that protects streaks while players are away, and a monthly community recap.</p>
-
-      <p class="links">
-        <a href="https://riftdle.lol" target="_blank" rel="noopener">Play it</a>
-      </p>
-    </section>
-
-    <!-- ===== THE REST OF THE BOOK ===== -->
-    <section id="entries">
-      <h2 class="rule-head">The rest of the book</h2>
-
-      <article class="entry">
-        <div class="entry-rail"><span class="rank">02</span><span class="kind">Live tool</span></div>
-        <div class="entry-main">
-          <h3>Blood on the Clocktower Token Mapper</h3>
-          <ul class="tech"><li>JavaScript</li><li>Cloudflare Pages</li><li>Cloudflare D1</li></ul>
-          <div class="entry-cols">
-            <div class="entry-text">
-              <p class="lead">A free tool that turns any custom script into printable token sheets, so groups stop hand writing substitutes before every game.</p>
-              <p>The base box ships around 20 characters, but almost nobody plays those. Groups pull a custom script off the community site, then either buy more tokens or scribble replacements on blanks.</p>
-              <p>Paste in a script and the mapper works out which spare token can stand in for each missing character, then prints ready to cut player sheets and a storyteller night order sheet built around that substitution.</p>
-              <p class="note">One self contained HTML file with no dependencies, behind a Content Security Policy that pins the hash of its single inline script, so nothing else can execute on the page. Print activity goes to Cloudflare D1 anonymously, counts and country only.</p>
-              <p class="links"><a href="https://botctokenmapper.com" target="_blank" rel="noopener">Try it</a></p>
+          <div class="project__body">
+            <div class="project__copy">
+              <p class="project__lede">A daily card game for a trading card community. I designed it, built it, and I run it alone.</p>
+              <p class="project__note">More than 11,000 players, 100,000+ games and 5,900+ hours played. Six modes, 26 achievements and 1,100+ cards across four sets. The repository is private.</p>
+              <table class="spec">
+                <caption>Decisions with a cost</caption>
+                <tbody>
+                  <tr><th scope="row">14.6 GB a day</th><td>Card art was the hosting bill. Moving delivery to Cloudflare R2 behind a custom domain took the bandwidth cost with it.</td></tr>
+                  <tr><th scope="row">1,100+ cards</th><td>A Python pipeline pulls card data, art and keywords from the official gallery. Adding a set is a script run, not manual entry.</td></tr>
+                  <tr><th scope="row">13 views</th><td>The analytics dashboard covers cohorts, guesses, devices and geography. A browser cache and delta fetches keep reads inside the free quota.</td></tr>
+                  <tr><th scope="row">31 tests</th><td>Playwright covers all six modes, streaks and cross device sync. Server rules validate every score write.</td></tr>
+                </tbody>
+              </table>
+              <p class="stack">React, Firebase, Python, Cloudflare R2</p>
+              <p class="links"><a class="btn" href="https://riftdle.lol" target="_blank" rel="noopener">Play Riftdle <span aria-hidden="true">&rarr;</span></a></p>
             </div>
-            <div class="entry-media">
-              <figure class="wide-plate">
-                <img src="assets/images/botc.png" width="1900" height="1035" alt="The token mapper showing a loaded script with each character matched to a substitute base box token" loading="lazy">
-                <figcaption>A loaded script. Each character on the left is matched to the spare token that will stand in for it.</figcaption>
+            <div class="project__media project__stack">
+              <figure class="media">
+                <div class="vidwrap">
+                  <video class="vid" poster="assets/images/poster-riftdle.jpg" preload="none" muted loop playsinline controls width="1280" height="720" aria-label="Riftdle gameplay">
+                    <source src="assets/videos/riftdle-720.mp4?v=2" type="video/mp4">
+                  </video>
+                  <button class="vid__play" type="button" aria-label="Play the Riftdle video"><span class="yt__btn">Play</span></button>
+                </div>
+                <figcaption>Art mode, one of six, recorded from the live game.</figcaption>
+              </figure>
+
+              <figure class="stats">
+                <figcaption>
+                  <p class="stats__title">Who came back</p>
+                  <p class="stats__sub">From my own analytics dashboard</p>
+                </figcaption>
+                <div class="stats__row">
+                  <span>Returned at all, all time</span>
+                  <span class="stats__value">34%</span>
+                  <span class="stats__bar" aria-hidden="true"><span style="--w: 34%"></span></span>
+                </div>
+                <div class="stats__row">
+                  <span>Returned within seven days</span>
+                  <span class="stats__value">41%</span>
+                  <span class="stats__bar" aria-hidden="true"><span style="--w: 41%"></span></span>
+                </div>
+                <div class="stats__row">
+                  <span>Weekly players on 3 or more days</span>
+                  <span class="stats__value">80%</span>
+                  <span class="stats__bar" aria-hidden="true"><span style="--w: 80%"></span></span>
+                </div>
+                <div class="stats__row">
+                  <span>Weekly players on 4 or more days</span>
+                  <span class="stats__value">49%</span>
+                  <span class="stats__bar" aria-hidden="true"><span style="--w: 49%"></span></span>
+                </div>
               </figure>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="entry">
-        <div class="entry-rail"><span class="rank">03</span><span class="kind">Ongoing</span></div>
-        <div class="entry-main">
-          <h3>AI Music Videos</h3>
-          <ul class="tech"><li>ComfyUI</li><li>Flux</li><li>WAN</li><li>DaVinci Resolve</li></ul>
-          <div class="entry-cols">
-            <div class="entry-text">
-              <p class="lead">Full music videos made with generative AI instead of a camera and a cast, published as Yulia Labels.</p>
-              <p>Character stills come out of Flux, then get animated with WAN image to video. Chaining the last frame of one clip into the start of the next keeps the camera moving continuously across a shot instead of resetting every few seconds, which is the part most AI video gets wrong.</p>
-              <p class="note">Vocals are lip synced to the real track, then everything is upscaled and colour matched before the final cut in Resolve.</p>
-              <p class="links"><a href="https://www.youtube.com/@YuliaLabels" target="_blank" rel="noopener">Watch on YouTube</a></p>
-            </div>
-            <div class="entry-media">
-              <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/XQ6oktT6-ew?start=25" title="YURULU, Golden Golden music video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-            </div>
+        <article class="project project--flip" id="rumpus">
+          <div class="project__head">
+            <span class="project__no" aria-hidden="true">02</span>
+            <h3 class="project__name display">Rumpus</h3>
+            <span class="status">In build</span>
           </div>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-rail"><span class="rank">04</span><span class="kind">Community</span></div>
-        <div class="entry-main">
-          <h3>Pixelborn Card Scraper</h3>
-          <ul class="tech"><li>Python</li><li>Selenium</li><li>Requests</li></ul>
-          <div class="entry-cols">
-            <div class="entry-text">
-              <p class="lead">When 1,000+ players lost access to the card art overnight, I scraped and republished the whole set. It has since passed 8,000 views and became the link the community shares.</p>
-              <p>A community built digital version of the game made players download copyrighted card art themselves. The person hosting the main link went on holiday and took it with them.</p>
-              <p>I pulled the art and icons from official sources, sorted them by rarity using colour recognition, resized everything to the dimensions the client expects, and put the set on archive.org where it could not disappear again.</p>
-              <p class="links">
-                <a href="https://archive.org/details/images-final" target="_blank" rel="noopener">The archive</a>
-                <a href="https://github.com/yattian/Card-scraper" target="_blank" rel="noopener">Source</a>
-              </p>
+          <div class="project__body">
+            <div class="project__copy">
+              <p class="project__lede">Browser party games. Send a link, play in seconds, no apps and no accounts.</p>
+              <p class="project__note">Eleven games share one room and one set of rules, held between the browser and a room server. The worlds are 3D and run in a browser tab.</p>
+              <table class="spec">
+                <caption>What is in the room</caption>
+                <tbody>
+                  <tr><th scope="row">11 games</th><td>Hue Off, Two Thirds, Gridlock, Beamline, Fuse, Spectrum, Lowest Unique, Flock, Acre, Lantern and Pong, each with its own world and twists.</td></tr>
+                  <tr><th scope="row">12 seats</th><td>One room, twelve players. Rules and positions live between the browser and the room server rather than trusting either.</td></tr>
+                  <tr><th scope="row">3D in a tab</th><td>React Three Fiber over Three.js, with scenes kept apart from clock updates and pixel ratio capped so phones keep up.</td></tr>
+                  <tr><th scope="row">2 lanes</th><td>Playwright covers the room flow end to end, and every release goes to staging before production.</td></tr>
+                </tbody>
+              </table>
+              <p class="stack">Next.js 16, React Three Fiber, Cloudflare Workers, partyserver</p>
+              <p class="links"><a class="btn" href="https://rumpus.party" target="_blank" rel="noopener">Open Rumpus <span aria-hidden="true">&rarr;</span></a></p>
             </div>
-            <div class="entry-media">
-              <div class="shots two wide">
-                <figure><img src="assets/images/card-scraper-app.png" width="594" height="351" alt="Scraped cards rendered inside the Pixelborn game client" loading="lazy"></figure>
-                <figure><img src="assets/images/use-my-link.png" width="1588" height="1012" alt="Discord conversation showing the community sharing the archive.org link" loading="lazy"></figure>
+            <figure class="media project__media">
+              <div class="vidwrap">
+                <video class="vid" poster="assets/images/poster-rumpus.jpg" preload="none" muted loop playsinline controls width="1280" height="720" aria-label="Rumpus gameplay">
+                  <source src="assets/videos/rumpus-720.mp4?v=2" type="video/mp4">
+                </video>
+                <button class="vid__play" type="button" aria-label="Play the Rumpus video"><span class="yt__btn">Play</span></button>
               </div>
-            </div>
+              <figcaption>Hue Off, one of the eleven.</figcaption>
+            </figure>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="entry">
-        <div class="entry-rail"><span class="rank">05</span><span class="kind">Android app</span></div>
-        <div class="entry-main">
-          <h3>Riftbound Translator</h3>
-          <ul class="tech"><li>Kotlin</li><li>Android</li><li>CameraX</li><li>ML Kit</li></ul>
-          <div class="entry-cols">
-            <div class="entry-text">
-              <p class="lead">Point a phone at a card and the translation appears. Works with no connection, carrying 500+ card images in each language.</p>
-              <p>Players run mixed language decks, so half the table cannot read what has just been played. Type a card ID and the translated card appears, or use the camera tab and ML Kit OCR reads the ID off the card for you.</p>
-              <p class="links"><a href="https://github.com/yattian/riftbound-translator" target="_blank" rel="noopener">Source</a></p>
+        <article class="project" id="token-mapper">
+          <div class="project__head">
+            <span class="project__no" aria-hidden="true">03</span>
+            <h3 class="project__name display">BotC Token Mapper</h3>
+            <span class="status status--live">Live</span>
+          </div>
+          <div class="project__body">
+            <div class="project__copy">
+              <p class="project__lede">Turns a custom Blood on the Clocktower script into printable token sheets. Community groups were doing this by hand.</p>
+              <p class="project__note">Paste in a script and it pairs every missing character with a spare token, then builds the player sheets and a storyteller night order sheet.</p>
+              <table class="spec">
+                <caption>How it ships</caption>
+                <tbody>
+                  <tr><th scope="row">1 file</th><td>A single dependency free HTML page, served behind a strict Content Security Policy with a hash pinned per page.</td></tr>
+                  <tr><th scope="row">181 characters</th><td>Character data and art come from the official release, so a new script works the day it is written.</td></tr>
+                </tbody>
+              </table>
+              <p class="stack">JavaScript, Cloudflare Pages, D1</p>
+              <p class="links"><a class="btn" href="https://botctokenmapper.com" target="_blank" rel="noopener">Open the tool <span aria-hidden="true">&rarr;</span></a></p>
             </div>
-            <div class="entry-media">
-              <div class="shots two tall">
-                <figure><img src="assets/images/translator-english.png" width="470" height="987" alt="English version of the Relentless Storm card in the app" loading="lazy"><figcaption>English</figcaption></figure>
-                <figure><img src="assets/images/translator-chinese.png" width="468" height="980" alt="Chinese version of the Relentless Storm card in the app" loading="lazy"><figcaption>Chinese</figcaption></figure>
+            <figure class="media project__media">
+              <div class="vidwrap">
+                <video class="vid" poster="assets/images/poster-botc.jpg" preload="none" muted loop playsinline controls width="1280" height="720" aria-label="BotC Token Mapper walkthrough">
+                  <source src="assets/videos/botc-720.mp4?v=2" type="video/mp4">
+                </video>
+                <button class="vid__play" type="button" aria-label="Play the Token Mapper video"><span class="yt__btn">Play</span></button>
               </div>
-            </div>
+              <figcaption>A loaded script, matched against the tokens in one base box.</figcaption>
+            </figure>
           </div>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-rail"><span class="rank">06</span><span class="kind">Research</span></div>
-        <div class="entry-main">
-          <h3>Weather informed traffic forecasting</h3>
-          <ul class="tech"><li>Python</li><li>Graph Neural Networks</li><li>Selenium</li></ul>
-          <div class="entry-cols">
-            <div class="entry-text">
-              <p class="lead">Honours dissertation testing whether weather data makes traffic flow prediction meaningfully better.</p>
-              <p>Existing spatiotemporal models predict flow from road topology and history alone. I scraped rainfall, temperature and wind from Wunderground and merged them into the graph input before it reached the model, then measured what that bought.</p>
-              <p class="links">
-                <a href="https://github.com/yattian/Graph-Neural-Network-Dissertation/blob/main/Yatai_Tian_Dissertation_402799865.pdf" target="_blank" rel="noopener">Read the dissertation</a>
-                <a href="https://github.com/yattian/Graph-Neural-Network-Dissertation" target="_blank" rel="noopener">Source</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
-    <!-- ===== ALSO BUILT ===== -->
-    <section class="also">
-      <h2 class="rule-head">Also built</h2>
-      <ul>
-        <li>
-          <span class="n">Subreddit sentiment analysis</span>
-          <span class="d">NLP sentiment work on the Stardew Valley subreddit. Presented to the Microsoft Student Acceleration team, which led to an internship offer.</span>
-          <span class="meta">
-            <span class="t">R, Python</span>
-            <span class="l"><a href="https://github.com/yattian/NLP-StardewValley" target="_blank" rel="noopener">Source</a></span>
-          </span>
-        </li>
-        <li>
-          <span class="n">ZeldenRing</span>
-          <span class="d">A cut down Elden Ring style action RPG. Character animation, class systems for player and AI, and state machines.</span>
-          <span class="meta">
-            <span class="t">Unity, C#</span>
-            <span class="l"><a href="https://github.com/yattian/ZeldenRing" target="_blank" rel="noopener">Source</a><a href="https://youtu.be/ixyjaWv8sSM" target="_blank" rel="noopener">Demo</a></span>
-          </span>
-        </li>
-        <li>
-          <span class="n">Custom game case store</span>
-          <span class="d">A storefront for uploading and ordering custom game case covers, with Stripe handling checkout.</span>
-          <span class="meta">
-            <span class="t">Node.js, Stripe</span>
-            <span class="l"><a href="https://github.com/yattian/SwitchCase-using-NodeJS" target="_blank" rel="noopener">Source</a></span>
-          </span>
-        </li>
-        <li>
-          <span class="n">Dice climbing mini game</span>
-          <span class="d">A team bonding game built in Roblox, including the environment and the UI players interact with.</span>
-          <span class="meta">
-            <span class="t">Luau</span>
-            <span class="l"><a href="https://youtu.be/zvK3HIZZtkY" target="_blank" rel="noopener">Demo</a></span>
-          </span>
-        </li>
-        <li>
-          <span class="n">Platformer</span>
-          <span class="d">Started from a tutorial, then extended with traps, hidden pathways and challenges of my own.</span>
-          <span class="meta">
-            <span class="t">Unity, C#</span>
-            <span class="l"><a href="https://github.com/yattian/Platformer" target="_blank" rel="noopener">Source</a></span>
-          </span>
-        </li>
-        <li>
-          <span class="n">Terraforming Mars agent</span>
-          <span class="d">Monte Carlo tree search with experience replay reinforcement learning, plus a heuristic that discards cards giving no immediate value.</span>
-          <span class="meta">
-            <span class="t">Python</span>
-            <span class="l"><span class="nolink">Not published</span></span>
-          </span>
-        </li>
-      </ul>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="about" id="about">
-      <h2 class="rule-head">About</h2>
-      <div class="about-cols">
-        <div class="about-body">
-          <p class="lead">The pattern is probably obvious by now. I notice the small workarounds people have quietly accepted, and I build the whole fix rather than a prototype.</p>
-          <p>The art nobody could download. The cards half the table cannot read. The tokens written out by hand before every session. Each of those was a problem people had stopped expecting anyone to solve, which is usually the sign that solving it properly is worth the weekend.</p>
-          <p>The day job is Quantium, where I have been an analyst since 2024, writing Python and SQL for internal tools and checking that numbers match production on their flagship checkout product. I won the 2024 engineering hackathon there with a dashboard that captured page snapshots and answered questions about them. Before that I studied data science at the University of Auckland, then stayed on for a postgraduate degree in computer science focused on machine learning and big data.</p>
-          <p>Everything above this line was built outside that job. That is the part I actually care about: owning the whole thing, the data and the product and the infrastructure and the bill. I work in an AI augmented workflow and I am fast because of it. I am also the one who has to fix it when it breaks, which keeps me honest about what goes out.</p>
+    <section class="band fill-navy" id="watch" aria-labelledby="watch-heading">
+      <div class="shell">
+        <div class="band__head">
+          <h2 class="display" id="watch-heading"><span class="orn" aria-hidden="true">&#9670;</span> Watch</h2>
+          <p>Two things that are better seen than described.</p>
         </div>
 
-        <aside class="about-side">
-          <h3>Off the clock</h3>
-          <ul>
-            <li>A committed board gamer, the heavier the rulebook the better</li>
-            <li>Follows AI tooling closely and puts it to work, which is why one person can ship at this pace</li>
-            <li>Taught statistics and database labs to 500+ students</li>
-            <li>Once choreographed a group dance that won the interhouse talent quest. Still my least reproducible result</li>
-          </ul>
-        </aside>
+        <div class="watch">
+          <article class="watch__item">
+            <div class="yt" data-yt="XQ6oktT6-ew" data-start="25" data-title="YURULU, Golden Golden music video">
+              <img src="assets/images/yt-golden.jpg" width="1280" height="720" alt="Still from the Golden Golden music video" loading="lazy" decoding="async">
+              <a class="yt__play" href="https://www.youtube.com/watch?v=XQ6oktT6-ew&amp;t=25s" target="_blank" rel="noopener" aria-label="Play the Golden Golden music video"><span class="yt__btn">Play</span></a>
+            </div>
+            <h3 class="display"><span class="orn" aria-hidden="true">04</span> AI music videos</h3>
+            <p>Full music videos built from generative stills and video, then edited and graded. Passing the last frame of one clip into the next keeps a shot moving instead of resetting every few seconds. This one starts just before the chorus.</p>
+            <p class="stack">ComfyUI, Flux, WAN, DaVinci Resolve</p>
+          </article>
+
+          <article class="watch__item">
+            <div class="yt" data-yt="ixyjaWv8sSM" data-start="0" data-title="ZeldenRing gameplay demo">
+              <img src="assets/images/yt-zeldenring.jpg" width="1280" height="720" alt="Still from the ZeldenRing gameplay demo" loading="lazy" decoding="async">
+              <a class="yt__play" href="https://www.youtube.com/watch?v=ixyjaWv8sSM" target="_blank" rel="noopener" aria-label="Play the ZeldenRing demo"><span class="yt__btn">Play</span></a>
+            </div>
+            <h3 class="display"><span class="orn" aria-hidden="true">05</span> ZeldenRing</h3>
+            <p>A compact action RPG built to study the systems behind Elden Ring style combat: responsive animation, reusable player and enemy classes, and state machines for the AI.</p>
+            <p class="stack">Unity, C#</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="index" aria-labelledby="index-heading">
+      <div class="shell">
+        <div class="band__head">
+          <h2 class="display" id="index-heading"><span class="orn" aria-hidden="true">&#9670;</span> The index</h2>
+          <p>Five more, each with the thing you can check.</p>
+        </div>
+
+        <ol class="index">
+          <li class="index__row">
+            <a class="index__link" href="https://archive.org/details/images-final" target="_blank" rel="noopener">
+              <span class="index__no">06</span>
+              <span>
+                <span class="index__name display">Pixelborn card scraper</span>
+                <span class="index__lede">Recovered and republished a card art set after more than 1,000 players lost the community download. The archive has passed 8,000 views.</span>
+              </span>
+              <span class="index__meta"><b>Archive</b><span>Python, Selenium</span></span>
+              <span class="index__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="index__row">
+            <a class="index__link" href="https://github.com/yattian/riftbound-translator" target="_blank" rel="noopener">
+              <span class="index__no">07</span>
+              <span>
+                <span class="index__name display">Riftbound Translator</span>
+                <span class="index__lede">Point a phone at a card and read its translation with no connection. Over 500 card images in each language.</span>
+              </span>
+              <span class="index__meta"><b>Source</b><span>Kotlin, CameraX, ML Kit</span></span>
+              <span class="index__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="index__row">
+            <a class="index__link" href="https://github.com/yattian/Graph-Neural-Network-Dissertation/blob/main/Yatai_Tian_Dissertation_402799865.pdf" target="_blank" rel="noopener">
+              <span class="index__no">08</span>
+              <span>
+                <span class="index__name display">Traffic forecasting with weather</span>
+                <span class="index__lede">Honours dissertation asking whether local weather improves a spatiotemporal graph model enough to justify the extra data pipeline.</span>
+              </span>
+              <span class="index__meta"><b>Paper</b><span>Python, graph neural networks</span></span>
+              <span class="index__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="index__row">
+            <a class="index__link" href="https://youtu.be/zvK3HIZZtkY" target="_blank" rel="noopener">
+              <span class="index__no">09</span>
+              <span>
+                <span class="index__name display">Dice climbing mini game</span>
+                <span class="index__lede">A Roblox team game. I built the environment and the player interface.</span>
+              </span>
+              <span class="index__meta"><b>Demo</b><span>Luau, Roblox</span></span>
+              <span class="index__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+          <li class="index__row">
+            <a class="index__link" href="https://github.com/yattian/Platformer" target="_blank" rel="noopener">
+              <span class="index__no">10</span>
+              <span>
+                <span class="index__name display">Platformer</span>
+                <span class="index__lede">A Unity platformer extended with original traps, hidden routes and challenges.</span>
+              </span>
+              <span class="index__meta"><b>Source</b><span>Unity, C#</span></span>
+              <span class="index__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band" id="captures" aria-labelledby="captures-heading">
+      <div class="shell">
+        <div class="band__head">
+          <h2 class="display" id="captures-heading"><span class="orn" aria-hidden="true">&#9670;</span> Captures</h2>
+          <p>Real screens from the work above. Click one to enlarge it.</p>
+        </div>
+        <div class="captures">
+          <figure class="capture">
+            <img src="assets/images/riftdle-dashboard-new.png" width="877" height="597" alt="The Riftdle analytics dashboard showing player cohorts" loading="lazy" decoding="async">
+            <figcaption>Riftdle analytics, 13 views</figcaption>
+          </figure>
+          <figure class="capture">
+            <img src="assets/images/card-scraper-app.png" width="594" height="351" alt="Recovered card art loaded in the Pixelborn game client" loading="lazy" decoding="async">
+            <figcaption>The recovered set, in the client</figcaption>
+          </figure>
+          <figure class="capture">
+            <img src="assets/images/use-my-link.png" width="1588" height="1012" alt="Players in a chat passing the archive link to each other" loading="lazy" decoding="async">
+            <figcaption>Players passing the archive on</figcaption>
+          </figure>
+          <figure class="capture">
+            <img class="center" src="assets/images/translator-chinese.png" width="468" height="980" alt="A Riftbound card translated into Chinese in the Android app" loading="lazy" decoding="async">
+            <figcaption>Translator, Chinese</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="about" aria-labelledby="about-heading">
+      <div class="shell">
+        <div class="band__head">
+          <h2 class="display" id="about-heading"><span class="orn" aria-hidden="true">&#9670;</span> About</h2>
+        </div>
+        <div class="about">
+          <div class="about__copy">
+            <p>I like work where the data, the interface and the operating details all have to agree.</p>
+            <p>At Quantium I write Python and SQL for internal tools and validate production data for a major checkout product. I won the 2024 engineering hackathon with a dashboard that captured page snapshots and answered questions about them.</p>
+            <p>Outside work I build for communities I am already part of. That means talking to players, choosing the stack, watching the bill and fixing what breaks after launch. I work in an AI augmented way, and I am the one who fixes what ships.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Now</dt><dd>Analyst at Quantium since February 2024</dd></div>
+            <div><dt>Education</dt><dd>Postgraduate Computer Science and BSc Data Science, University of Auckland</dd></div>
+            <div><dt>Earlier</dt><dd>Taught statistics and database labs to more than 500 students</dd></div>
+            <div><dt>Interests</dt><dd>Board games, game systems, practical AI tools</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
   </main>
 
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Expanded image">
-    <button class="modal-x" aria-label="Close">&times;</button>
-  </div>
-
-  <footer id="contact">
-    <p class="foot-label">Get in touch</p>
-    <a href="mailto:yataitian@gmail.com" class="mail">yataitian@gmail.com</a>
-    <p class="foot-note">If any of this looks like something you need built, I am easy to reach and quick to reply.<br>Hand built with vanilla HTML, CSS and JavaScript. No framework, no build step.<br>&copy; 2026 Yatai Tian</p>
+  <footer class="plate" id="contact">
+    <div class="shell">
+      <p class="plate__line display">Everything here is live or linked to the source.</p>
+      <a class="plate__mail" href="mailto:yataitian@gmail.com">yataitian@gmail.com</a>
+      <div class="plate__meta">
+        <span>Yatai Tian, data analyst and software engineer</span>
+        <span>&copy; 2026</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <dialog class="lightbox" id="lightbox" aria-label="Enlarged capture">
+    <button class="lightbox__close" type="button">Close</button>
+    <img src="" alt="">
+  </dialog>
+
+  <script src="js/main.js?v=carnival"></script>
 </body>
 </html>
